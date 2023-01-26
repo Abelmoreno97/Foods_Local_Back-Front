@@ -1,0 +1,8 @@
+.mainCont{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: aqua;
+    border-radius: 15px;
+    border: 2px solid black; ;
+}
