@@ -9,13 +9,13 @@ const Home = ()=>{
 
     useEffect(()=>{
         dispatch(getUsers());
-    },[dispatch])
+    },[dispatch]);
     return(
         <>
         <h1>estoy en home</h1>
         <CardsContainer/>
         </>
-    )
+    );
 };
 
 export default Home;
