@@ -1,6 +1,9 @@
 import { useState } from "react";
+import style from "./form.module.css"
 
 const Form = ()=>{
+
+
     const [form,setForm] = useState({
         name:""
     })
@@ -9,6 +12,8 @@ const Form = ()=>{
         name:""
     })
 
+
+
     const changeHandler= (event) => {
         const property = event.target.name;
         const value = event.target.value;
@@ -16,8 +21,6 @@ const Form = ()=>{
         validate({...form,[property]:value})
         setForm({...form,[property]:value})
     }
-    // (form.name.match("^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$")!=null){
-        // setErrors({...errors,name:""})
 
     const validate = (form) => {
         if(form.name===""){
@@ -29,7 +32,6 @@ const Form = ()=>{
         }
     }
 
-
     const submitHandler = (event) => {
         event.preventDefault()
         alert("boton apretado")
@@ -37,20 +39,43 @@ const Form = ()=>{
     }
 
     return(
-     <form onSubmit={submitHandler}>
-        <div>
+     <form className={style.Form} onSubmit={submitHandler}>
+        <div className={style.divForm}>
             <label>name</label>
             <input type="text" value={form.name} onChange={changeHandler} name="name"/>
             {errors.name && <span>{errors.name}</span>}
         </div>
-        {/* <div>
-            <label></label>
-            <input></input>
+        <div className={style.divForm}>
+            <label>summary</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
         </div>
-        <div>
-            <label></label>
-            <input></input>
-        </div> */}
+        <div className={style.divForm}>
+            <label>healthscore</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
+        </div>
+        <div className={style.divForm}>
+            <label>steps</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
+        </div>
+        <div className={style.divForm}>
+            <label>dishtypes</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
+        </div>
+        <div className={style.divForm}>
+            <label>image</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
+        </div>
+        <div className={style.divForm}>
+            <label>diets</label>
+            <input type="text" value={form.name} onChange={changeHandler} name="name"/>
+            {errors.name && <span>{errors.name}</span>}
+        </div>
+      
         <button type="submit">SUBMIT</button>
      </form>
     )

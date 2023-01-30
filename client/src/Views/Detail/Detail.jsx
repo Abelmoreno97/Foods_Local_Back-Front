@@ -1,9 +1,9 @@
-const Detail = ()=>{
-    return(
-        <>
-        <h1>estoy en Detail</h1>
-        </>
-    )
+
+const Detail = (props) => {
+ 
+  return (
+    <p>asd</p>
+  );
 };
 
 export default Detail;

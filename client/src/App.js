@@ -4,12 +4,14 @@ import Home from "./Views/Home/Home";
 import Landing from "./Views/Landing/Landing";
 import { Route, useLocation } from "react-router-dom";
 import NavBar from "./Components/Navbar";
+import style from "./app.module.css"
+
 
 function App() {
   const loc = useLocation();
   
   return (
-    <div>
+    <div className={style.APP}>
 
 {loc.pathname !== "/" && <NavBar/>}
 
@@ -17,7 +19,7 @@ function App() {
         <Landing />
       </Route>
 
-      <Route exact path={"/detail"}>
+      <Route exact path={"/recipe/:id"}>
         <Detail />
       </Route>
 
