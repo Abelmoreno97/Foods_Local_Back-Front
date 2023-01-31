@@ -19,7 +19,7 @@ function App() {
         <Landing />
       </Route>
 
-      <Route exact path={"/recipe/:id"}>
+      <Route exact path={"/recipes/:id"}>
         <Detail />
       </Route>
 

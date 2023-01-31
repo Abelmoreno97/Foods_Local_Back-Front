@@ -19,3 +19,33 @@ return async function (dispatch){
 };
 };
 
+export const getDiets = (id) => {
+  return async function (dispatch){
+      const apiData = await axios.get(`http://localhost:3001/diets`);
+      const diets =apiData.data;
+      dispatch({type:"GET_DIETS",payload: diets });
+  };
+  };
+
+  export function getDetailFromState(payload) {
+    return {
+      type: "GET_DETAIL_FROM_STATE",
+      payload,
+    };
+  };
+
+  export function setCurrentPage(payload) {
+    return {
+      type: "SET_CURRENT_PAGE",
+      payload,
+    };
+  };
+
+// export const postRecipe = (body) => {
+//   return async function (dispatch) {
+//       const response = await axios.post(`http://localhost:3001//recipes/create`, body);
+//       const neww = response.data
+//       dispatch({type: "POST_RECIPE",payload: neww});
+//   };
+// }
+

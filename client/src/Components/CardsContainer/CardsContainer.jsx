@@ -1,9 +1,7 @@
-import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import style from "./CardsContainer.module.css"
-const CardsContainer = ()=>{
+const CardsContainer = (users)=>{
 
-const users = useSelector(state=>state.users)
 
     return(
        <div className={style.container}>

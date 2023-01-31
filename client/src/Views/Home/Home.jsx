@@ -1,8 +1,8 @@
-import CardsContainer from "../../Components/CardsContainer/CardsContainer";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsers } from "../../redux/actions";
 import style from "./home.module.css"
+import Pages from "../../Components/pages/Pages";
 
 const Home = ()=>{
 
@@ -13,7 +13,7 @@ const Home = ()=>{
     },[dispatch]);
     return(
         <div className={style.home}>
-        <CardsContainer/>
+        <Pages/>
         </div>
     );
 };
