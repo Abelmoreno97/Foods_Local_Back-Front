@@ -3,6 +3,7 @@ require("dotenv").config();
 const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../../db");
 const { getAllDiets } = require("./DietController");
+require('dotenv').config();
 
 // Filtra toda la info de la funcion Main id, name, summary, healthScore,steps .replace(/<[^>]*>?/g, "")
 const shorterArray = (array) =>
@@ -24,7 +25,7 @@ const shorterArray = (array) =>
 // trae toda la info de la api
 const Main = async () => {
   const results = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=5cbe8cef02d84f5eb8e5c678c78c16e8&addRecipeInformation=true&number=20`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=20`
   );
   return results.data.results;
 };

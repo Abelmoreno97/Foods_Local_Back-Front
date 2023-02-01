@@ -221,7 +221,7 @@ const Form = () => {
         {errors.diets && <span>{errors.diets}</span>}
       </div>
 
-      <button type="submit">SUBMIT</button>
+      <button className={style.submit} type="submit">SUBMIT</button>
     </form>
   );
 };

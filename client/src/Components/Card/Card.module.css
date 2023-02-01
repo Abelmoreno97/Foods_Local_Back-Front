@@ -16,7 +16,11 @@
     color: black;
 }
 
-img{
+.img{
+    width: 95%;
     border:0.5rem solid black;
 }
 
+.img:hover{
+    opacity: 0.5;
+}

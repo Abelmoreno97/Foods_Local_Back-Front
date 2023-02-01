@@ -1,6 +1,5 @@
 .container{
     justify-content: space-around;
-    border:1px solid black;
     display:flex;
     flex-direction: row;
     border-radius: 15px;

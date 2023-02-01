@@ -1,21 +1,23 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsers } from "../../redux/actions";
-import style from "./home.module.css"
+import style from "./home.module.css";
 import Pages from "../../Components/pages/Pages";
 
-const Home = ()=>{
+const Home = () => {
+  const dispatch = useDispatch();
+//   const users = useSelector((state) => state.users);
 
-    const dispatch = useDispatch();
 
-    useEffect(()=>{
-        dispatch(getUsers());
-    },[dispatch]);
-    return(
-        <div className={style.home}>
-        <Pages/>
-        </div>
-    );
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
+  return (
+    <div className={style.home}>
+      <Pages />
+    </div>
+  );
 };
 
 export default Home;

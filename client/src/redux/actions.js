@@ -41,6 +41,52 @@ export const getDiets = (id) => {
     };
   };
 
+
+  export const filterByName = (payload) => {
+    return {
+      type: "FILTER_BY_NAME",
+      payload,
+    };
+  };
+  
+  export const filterByHealtScore = (payload) => {
+    return {
+      type: "FILTER_BY_HEALTHSCORE",
+      payload,
+    };
+  };
+
+  export function getNameUser(name) {
+    return async function (dispatch) {
+        const apiList = await axios.get(`http://localhost:3001/recipes?name=${name}`);
+        const user = apiList.data;
+        return dispatch({
+          type: "GET_NAME",
+          payload: user,
+        });
+      };
+    };
+  
+    export const filterByDiet = (payload) => {
+      return {
+          type: "FILTER_BY_DIET",
+          payload,
+      }
+  }
+
+
+  
+  // export const filterByDiet = (type) => {
+  //   return async function (dispatch) {
+  //       const apiList = await axios.get(/types/${type});
+  //       const pokemons = apiList.data;
+  
+  //       dispatch({
+  //         type: FILTER_BY_TYPE,
+  //         payload: pokemons,
+  //       })}}
+
+
 // export const postRecipe = (body) => {
 //   return async function (dispatch) {
 //       const response = await axios.post(`http://localhost:3001//recipes/create`, body);

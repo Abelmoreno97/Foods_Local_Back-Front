@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardsContainer from "../CardsContainer/CardsContainer";
 import { setCurrentPage } from "../../redux/actions";
-import style from "./pages.module.css"
+import style from "./pages.module.css";
 
 const Pages = () => {
   const dispatch = useDispatch();
@@ -65,16 +65,16 @@ const Pages = () => {
 
   return (
     <div>
-      <nav>
-        <ul name="top">
+      <nav >
+        <ul name="top" className={style.list}>
           <li>
-            <button onClick={handlePrev}>PREV</button>
+            <button className={style.button} onClick={handlePrev}>PREV PAGE</button>
           </li>
 
           {pageNumbers}
 
           <li>
-            <button onClick={handleNext}>NEXT</button>
+            <button className={style.button} onClick={handleNext}>NEXT PAGE</button>
           </li>
         </ul>
       </nav>
@@ -87,16 +87,16 @@ const Pages = () => {
           </button>
         )}
       </div>
-      <nav>
-        <ul name="bottom">
+      <nav className={style.pageBottom}>
+        <ul name="bottom" className={style.list}>
           <li>
-            <button onClick={handlePrev}>PREV</button>
+            <button className={style.button} onClick={handlePrev}>PREV PAGE</button>
           </li>
 
           {pageNumbers}
 
           <li>
-            <button onClick={handleNext}>NEXT</button>
+            <button className={style.button} onClick={handleNext}>NEXT PAGE</button>
           </li>
         </ul>
       </nav>

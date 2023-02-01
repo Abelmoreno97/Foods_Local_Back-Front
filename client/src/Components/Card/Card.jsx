@@ -6,9 +6,9 @@ const Card = (props)=>{
             <p className={styles.parrafo}>Nº:{props.id}</p>
             <p className={styles.parrafo}>Name:<br/>{props.name}</p>
             <Link to={`recipes/${props.id}`}>
-            <img src={props.image} alt={props.name}></img>
+            <img className={styles.img} src={props.image} alt={props.name}></img>
         </Link>
-        <p>click photo for detail</p>
+        <p>CLICK PHOTO FOR DETAIL</p>
             {/* <p>healthScore:{props.healthScore}</p> */}
             <p className={styles.parrafo}>Diets:<br/>{props.diets}</p>
             {/* <p>dishTypes:{props.dishTypes}</p> */}
