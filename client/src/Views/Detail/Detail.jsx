@@ -33,8 +33,11 @@ const Detail = () => {
          <img className={style.imagen} src={user[0].image} alt="img" />
          <p>Summary:<br/><br/>{user[0].summary.replace(/<[^>]*>?/g, '')}</p>
        </div>
+       <div>
+          <p>Like:<br/>{user[0].like}</p>
+        </div>
         <div>
-          <p>Steps:<br/>{user[0].steps.map((e)=><p>{e}</p>)}</p>
+          <p>Steps:<br/>{user[0].steps}</p>
         </div>
         </div>
       ) : (

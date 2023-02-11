@@ -31,6 +31,14 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
       },
 
+      dishTypes: {
+        type: DataTypes.STRING,
+      },
+
+      like: {
+        type: DataTypes.STRING,
+      },
+
       steps: {
         type: DataTypes.TEXT,
       },

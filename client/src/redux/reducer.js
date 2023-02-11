@@ -109,6 +109,7 @@ const rootReducer = (state = initialState, action) => {
             // usersFD.forEach(user => user.diets.forEach(diet => diet.name === action.payload ? usersByDiet.push(diet) : false))
             return {
                 ...state,
+                currentPage: 1,
                 users: usersByDiet,
                 //error: usersByDiet.length > 0 ? false : `There are no recipe with the ${action.payload} diet`
             }

@@ -25,7 +25,7 @@ const shorterArray = (array) =>
 // trae toda la info de la api
 const Main = async () => {
   const results = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=20`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
   );
   return results.data.results;
 };
@@ -66,6 +66,8 @@ const processedDbRecipes = async () => {
       image: recipe.image,
       summary: recipe.summary,
       steps: recipe.steps,
+      like: recipe.like,
+      dishTypes:recipe.dishTypes,
       diets: recipe.Diets.map((rec) => {
         return rec.name;
       }),
@@ -99,18 +101,23 @@ const CreateRecipeController = async (
   summary,
   healthScore,
   steps,
+  dishTypes,
+  like,
+  image,
   diets
-) => await Recipe.create({ name, summary, healthScore, steps, diets });
+) => await Recipe.create({ name, summary, healthScore, steps, dishTypes, like, image, diets });
 
 const CreateRecipe = async (req, res) => {
   try {
-    const { name, summary, healthScore, image, steps, diets } = req.body;
+    const { name, summary, healthScore, image, dishTypes, like, steps, diets } = req.body;
 
     const recipeCreated = await Recipe.create({
       name,
       summary,
       healthScore,
       image,
+      like,
+      dishTypes,
       steps,
     });
 

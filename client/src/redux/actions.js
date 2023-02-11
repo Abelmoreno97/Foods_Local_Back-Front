@@ -59,7 +59,7 @@ export const getDiets = (id) => {
   export function getNameUser(name) {
     return async function (dispatch) {
         const apiList = await axios.get(`http://localhost:3001/recipes?name=${name}`);
-        const user = apiList.data;
+        const user = apiList.data 
         return dispatch({
           type: "GET_NAME",
           payload: user,

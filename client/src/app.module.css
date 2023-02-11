@@ -1,4 +1,5 @@
 .APP{
+    background-repeat: repeat;
     background-color: rgb(253, 248, 216);
     position: absolute;
     top: 0;

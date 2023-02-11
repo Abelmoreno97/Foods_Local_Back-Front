@@ -112,7 +112,7 @@ const NavBar = () => {
         <button className={style.button}>Home</button>{" "}
       </NavLink>
       <NavLink to="/create">
-        <button className={style.button}>Form</button>{" "}
+        <button className={style.button}>Create</button>{" "}
       </NavLink>
       <div className={style.filters}>
         <p>Order by</p>

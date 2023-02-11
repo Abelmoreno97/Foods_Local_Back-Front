@@ -21,6 +21,7 @@ const Form = () => {
     image: "",
     steps: "",
     dishTypes: "",
+    like:"",
     diets: [],
   });
 
@@ -31,6 +32,7 @@ const Form = () => {
     image: "",
     steps: "",
     dishTypes: "",
+    like:"",
     diets: [],
   });
 
@@ -57,6 +59,7 @@ const Form = () => {
       image: "",
       steps: "",
       dishTypes: "",
+      like:"",
       diets: [],
     });
     history.push("/home");
@@ -114,6 +117,12 @@ const Form = () => {
       err.dishTypes = "";
     }
 
+    if (form.like === "") {
+      err.like = "error, campo vacio";
+    } else {
+      err.like = "";
+    }
+
     if (form.image === "") {
       err.image = "error, campo vacio";
     } else {
@@ -125,6 +134,7 @@ const Form = () => {
 
   return (
     <form className={style.Form} onSubmit={submitHandler}>
+      <h1> CREA TU RECETA</h1>
       <div className={style.divForm}>
         <label>name</label>
         <input
@@ -181,6 +191,17 @@ const Form = () => {
       </div>
 
       <div className={style.divForm}>
+        <label>like</label>
+        <input
+          type="text"
+          value={form.like}
+          onChange={changeHandler}
+          name="like"
+        />
+        {errors.like && <span>{errors.like}</span>}
+      </div>
+
+      <div className={style.divForm}>
         <label>image</label>
         <input
           type="text"
@@ -191,11 +212,12 @@ const Form = () => {
         {errors.image && <span>{errors.image}</span>}
       </div>
 
-      <div className={style.divForm}>
-        <label>Diets</label>
-        <select onChange={(e) => handleSelect(e)} defaultValue="title">
+      <div className={style.ulDiets}>
+        <>
+        <label className={style.dietSelect} >Diets</label>
+        <select className={style.dietSelect} onChange={(e) => handleSelect(e)} defaultValue="title">
           <option value="title" disabled>
-            Diets
+            Select Diets
           </option>
 
           {diets.map((t) => {
@@ -206,18 +228,19 @@ const Form = () => {
             );
           })}
         </select>
-
+        </>
+          <>
         <ul>
           {form.diets.map((t) => {
             return (
               <li key={t}>
-                {t[0].toUpperCase() + t.slice(1).toLowerCase()}
+                {t[0].toUpperCase() + t.slice(1).toLowerCase()+" "}
                 <button onClick={() => handleDeleteType(t)}>x</button>
               </li>
             );
           })}
         </ul>
-
+        </>
         {errors.diets && <span>{errors.diets}</span>}
       </div>
 
